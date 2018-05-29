@@ -8,6 +8,8 @@ import com.smart.domain.LoginLog;
 
 @Repository
 public class LoginLogDao {
+
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	//保存登陆日志SQL
@@ -17,10 +19,5 @@ public class LoginLogDao {
 		Object[] args = { loginLog.getUserId(), loginLog.getIp(),
 				          loginLog.getLoginDate() };
 		jdbcTemplate.update(INSERT_LOGIN_LOG_SQL, args);
-	}
-
-	@Autowired
-	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate = jdbcTemplate;
 	}
 }

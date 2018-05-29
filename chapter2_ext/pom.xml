@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.smart</groupId>
-    <artifactId>chapter2</artifactId>
-    <version>1.0</version>
-    <name>Spring4.x第二章实例</name>
-    <description>Spring4.x第二章实例</description>
+    <artifactId>chapter2_ext</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Spring4.x第二章测试</name>
+    <description>Spring4.x第二章测试</description>
     <packaging>war</packaging>
     <dependencies>
         <!-- spring 依赖-->
@@ -77,11 +77,6 @@
             <artifactId>rabbitmqnew-sdk-java</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.zhubajie.messagequeue</groupId>
-            <artifactId>messagequeue-java-sdk</artifactId>
-            <version>1.0.8</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -98,7 +93,7 @@
                             <maxIdleTime>60000</maxIdleTime>
                         </connector>
                     </connectors>
-                    <contextPath>/bbs</contextPath>
+                    <contextPath>/wxz</contextPath>
                     <scanIntervalSeconds>0</scanIntervalSeconds>
                 </configuration>
             </plugin>

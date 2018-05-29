@@ -12,6 +12,7 @@ import com.smart.domain.User;
 
 @Repository
 public class UserDao {
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	private  final static String MATCH_COUNT_SQL = " SELECT count(*) FROM t_user  " +
@@ -42,10 +43,5 @@ public class UserDao {
 	public void updateLoginInfo(User user) {
 		jdbcTemplate.update(UPDATE_LOGIN_INFO_SQL, new Object[] { user.getLastVisit(),
 				user.getLastIp(),user.getCredits(),user.getUserId()});
-	}
-
-	@Autowired
-	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate = jdbcTemplate;
 	}
 }
