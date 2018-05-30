@@ -17,11 +17,11 @@ public class MQService {
     @Autowired
     private ConsumerManager testConsumer10;
 
-    public void publishMessage(){
+    public void publishMessage(String content){
         Message message=new Message();
         message.setExchange("balala.xiaomoxian.exchange");
         message.setRoutingKey("balala.xiaomoxian.routingKey");
-        message.setContent("Hellodawdawd");
+        message.setContent(content);
         try {
             publisher.publish(message);
         } catch (Exception e) {

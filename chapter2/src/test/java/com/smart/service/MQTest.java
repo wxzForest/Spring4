@@ -14,16 +14,18 @@ public class MQTest  extends AbstractTransactionalTestNGSpringContextTests {
 
     @Test
     public void publish(){
-        mqService.publishMessage();
+        mqService.publishMessage("abc");
     }
 
     @Test
     public void getMessage(){
+       // System.out.println("bobo");
         mqService.getMessage();
     }
 
     @Test
     public void getMessage10(){
+       // System.out.println("10");
         mqService.getMessage10();
     }
 
