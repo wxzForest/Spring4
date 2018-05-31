@@ -1,9 +1,8 @@
 package com.smart.service;
 
-import com.rabbitmq.client.api.consumer.ConsumerManager;
+import com.rabbitmq.client.api.consumer.ConsumerClient;
 import com.rabbitmq.client.api.entry.Message;
-import com.rabbitmq.client.api.publisher.Publisher;
-import com.zhubajie.messagequeuesdk.consumer.ConsumeManager;
+import com.rabbitmq.client.api.publisher.PublisherClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +10,11 @@ import org.springframework.stereotype.Service;
 public class MQService {
 
     @Autowired
-    private Publisher publisher;
+    private PublisherClient publisher;
     @Autowired
-    private ConsumerManager testConsumer;
+    private ConsumerClient testConsumer;
     @Autowired
-    private ConsumerManager testConsumer10;
+    private ConsumerClient testConsumer10;
 
     public void publishMessage(String content){
         Message message=new Message();

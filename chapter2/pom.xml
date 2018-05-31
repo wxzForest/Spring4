@@ -73,7 +73,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.rabbimq.client</groupId>
+            <groupId>com.rabbitmq.client</groupId>
             <artifactId>rabbitmqnew-sdk-java</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

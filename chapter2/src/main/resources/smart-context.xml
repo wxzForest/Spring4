@@ -11,12 +11,12 @@
        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
-    
+
     <!-- 扫描类包，将标注Spring注解的类自动转化Bean，同时完成Bean的注入 -->
     <context:component-scan base-package="com.smart.dao"/>
     <context:component-scan base-package="com.smart.service"/>
 
-    <!-- 配置数据源 -->
+     <!--配置数据源-->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close"
 		p:driverClassName="com.mysql.jdbc.Driver"
@@ -28,7 +28,7 @@
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
 		p:dataSource-ref="dataSource" />
 
-    <!--                        老 MQ 接 入 方 式                    -->
+    <!--                        老 MQ 接 入 方 式                     -->
     <bean name="myPublish" class="com.zhubajie.messagequeuesdk.publisher.Publisher" init-method="init" >
         <property name="bizId">
             <value>201805290001</value>
@@ -58,8 +58,7 @@
 
 
     <!--                        新 MQ 接 入 方 式                    -->
-    <!--发布者-->
-    <bean id="testPublish" class="com.rabbitmq.client.api.publisher.Publisher" init-method="init">
+    <bean id="testPublish" class="com.rabbitmq.client.api.publisher.PublisherClient" init-method="init">
         <property name="pubModuleUserName">
             <value>wxzpub10</value>
         </property>
@@ -71,9 +70,8 @@
         </property>
     </bean>
 
-    <!--接收者-->
     <bean id="listener" class="com.smart.service.Listener"/>
-    <bean id="testConsumer" class="com.rabbitmq.client.api.consumer.ConsumerManager" init-method="start">
+    <bean id="testConsumer" class="com.rabbitmq.client.api.consumer.ConsumerClient" init-method="start">
         <property name="vhost">
             <value>wxzpub10</value>
         </property>
@@ -89,7 +87,7 @@
         <property name="listener" ref="listener"/>
     </bean>
 
-    <bean id="testConsumer10" class="com.rabbitmq.client.api.consumer.ConsumerManager" init-method="start">
+    <bean id="testConsumer10" class="com.rabbitmq.client.api.consumer.ConsumerClient" init-method="start">
         <property name="vhost">
             <value>wxzpub10</value>
         </property>
@@ -121,6 +119,4 @@
 			<tx:method name="*" />
 		</tx:attributes>
 	</tx:advice>
-
-
 </beans>

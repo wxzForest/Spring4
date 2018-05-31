@@ -16,40 +16,6 @@
     <context:component-scan base-package="com.smart.dao"/>
     <context:component-scan base-package="com.smart.service"/>
 
-	<bean id="testPublish" class="com.rabbitmq.client.api.publisher.Publisher" init-method="init">
-		<property name="pubModuleUserName">
-			<value>wxzpub10</value>
-		</property>
-
-		<property name="pubModulePassword">
-			<value>Ddo0sv</value>
-		</property>
-
-		<property name="vhost">
-			<value>wxzpub10</value>
-		</property>
-	</bean>
-
-    <bean id="listener" class="com.smart.service.Listener"/>
-
-
-    <bean id="testConsumer" class="com.rabbitmq.client.api.consumer.ConsumerManager" init-method="start">
-        <property name="vhost">
-            <value>wxzpub10</value>
-        </property>
-        <property name="userName">
-            <value>wxzpub10</value>
-        </property>
-        <property name="password">
-            <value>Ddo0sv</value>
-        </property>
-        <property name="queue">
-            <value>jk04__258</value>
-        </property>
-        <property name="listener" ref="listener"/>
-    </bean>
-
-
     <!-- 配置数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close" 

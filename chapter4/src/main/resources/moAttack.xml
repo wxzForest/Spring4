@@ -5,6 +5,5 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
    <bean id="geli" class="LiuDeHua"/>
-   <bean id="moAttack" class="com.smart.ioc.MoAttack"
-         p:geli-ref="geli"/>
+   <bean id="moAttack" class="com.smart.ioc.MoAttack" p:geli-ref="geli"/>
 </beans>

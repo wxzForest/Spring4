@@ -14,7 +14,7 @@ public class MQTest  extends AbstractTransactionalTestNGSpringContextTests {
 
     @Test
     public void publish(){
-        mqService.publishMessage("abc");
+        mqService.publishMessage("abcd");
     }
 
     @Test
